@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTOS Security Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RTOS Task Authentication Simulation</h1>
+
+        <!-- User Authentication Section -->
+        <div id="userAuth">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter Username">
+            <button onclick="authenticateUser()">Authenticate User</button>
+        </div>
+
+        <!-- Task Form -->
+        <div id="taskForm" class="hidden">
+            <label for="taskKey">Enter Security Key:</label>
+            <input type="password" id="taskKey" placeholder="Enter Security Key" required>
+
+            <button onclick="askTaskName()">Proceed</button>
+        </div>
+
+        <!-- Task Name Section -->
+        <div id="taskNameSection" class="hidden">
+            <label for="taskName">Select Task Name:</label>
+            <select id="taskName">
+                <option value="">--Select a Task--</option>
+            </select>
+
+            <label for="taskPriority">Task Priority:</label>
+            <select id="taskPriority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+
+            <button onclick="submitTask()">Submit Task</button>
+        </div>
+
+        <!-- Task History Section -->
+        <div id="taskHistory" class="hidden">
+            <h2>Task History</h2>
+            <ul id="historyList"></ul>
+        </div>
+
+        <div id="resultContainer">
+            <h2>Task Authentication Results:</h2>
+            <ul id="resultList"></ul>
+        </div>
+
+        <p id="maxTaskWarning"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
